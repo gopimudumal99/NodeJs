@@ -251,5 +251,9 @@ server.listen(3001);
 - middleware are going to add after app and before server
 - **_app.use((req,res,next)=>{})_** => this method allows as to add new middleware function
 - **_next_** is a function that allows the request to continue to the next middleware in line
+```app.use(bodyParser.urlencoded({extended:false}));
+```
+this ***body-parser*** library helps to parse the incoming request with body 
+
 
 
