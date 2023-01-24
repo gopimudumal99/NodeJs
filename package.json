@@ -1,0 +1,26 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "- Javascript runtime environment\r - built on Js\r - it allows to run js code on server\r - basically it allows the js not just in browser but anywhere else like normal programing\r - it allows to run js out of the browser\r - node js uses V8 is js engine build by google that allowed the js run in browser\r - node js ->uses -> chrome V8 engine -> compiles the js -> machine code || v8 self written in C++",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gopimudumal99/NodeJs.git"
+  },
+  "author": "Gopi Mudmal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gopimudumal99/NodeJs/issues"
+  },
+  "homepage": "https://github.com/gopimudumal99/NodeJs#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

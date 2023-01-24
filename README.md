@@ -92,6 +92,7 @@ server.listen(3000);
   node app.js => start script => parse code, register variables & Functions => Event Loop => to stop forcefully - process.exit
 
 ## code
+
 - how web works? client => Request => Server => Response => Client
 - program Life Cycle & Event loop
 - Asynchronous code
@@ -208,4 +209,47 @@ please go throw this article
 
 ! please add a image here
 ! add here event loop picture
+
+# Express.js
+
+! add image here?
+
+- Server side logic is complex
+- focus on your business logic, not on the nitty-gritty Details!
+- use a framework for heavy lifting
+
+Install and run in local
+
+```node
+yarn add -D nodemon
+
+yarn add express
+
+// in package.json add this
+  "scripts": {
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+
+// in app.js
+
+const http = require("http");
+const express = require("express");
+
+const app = express();
+
+const server = http.createServer(app);
+
+server.listen(3001);
+
+```
+
+## middleware
+
+- express all about middleware
+- add image here ?
+- middleware are going to add after app and before server
+- **_app.use((req,res,next)=>{})_** => this method allows as to add new middleware function
+- **_next_** is a function that allows the request to continue to the next middleware in line
+
 
