@@ -250,10 +250,80 @@ server.listen(3001);
 - add image here ?
 - middleware are going to add after app and before server
 - **_app.use((req,res,next)=>{})_** => this method allows as to add new middleware function
-- **_next_** is a function that allows the request to continue to the next middleware in line
-```app.use(bodyParser.urlencoded({extended:false}));
+
+```node
+// app.use(express.json()); //! i don't no it will be not working here
+
+app.use((req, res, next) => {
+  console.log("In the middle");
+  next(); //!  allows the request to continue to the next middleware in line
+});
 ```
-this ***body-parser*** library helps to parse the incoming request with body 
+
+- **_next_** is a function that allows the request to continue to the next middleware in line
+
+```app.use(bodyParser.urlencoded({extended:false}));
+
+```
+
+this **_body-parser_** library helps to parse the incoming request with body
+
+#### routes
+
+```
+const express = require("express");
+
+const router = express.Router();
+
+router.get("/add-product", (req, res, next) => {
+  //   console.log("In another middle");
+  res.send(
+    "<div><h1>The add product page</h1><form action='/product' method='POST'> <input type='text' name='title'/> <button type='submit'>Add Product</button></form> </div>"
+  );
+});
+
+router.post("/product", (req, res, next) => {
+  console.log(">>>>", req.body);
+  res.redirect("/");
+});
+
+module.exports = router;
+```
+
+**_router.use() _** => will not check exact method and path, it will handle all http methods
+
+**_router.get() _** => will check exact method and path
+
+#### Adding 404 page
+
+```node
+// adding this last all app.use methods
+
+app.use((req, res, next) => {
+  res.status(404).send("<h1>Page Not Found!</h1>");
+});
+```
+
+**_ show response html file _**
+
+```
+// /admin/add-product =>get
+router.get("/add-product", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "..", "views", "add-product.html"));
+});
+
+// utils => path.js
+const path = require("path");
+
+module.exports = path.dirname(require.main.filename);
 
 
+// import it in admin.js file
+const rootDir = require("../utils/path");
 
+router.get("/add-product", (req, res, next) => {
+  res.sendFile(path.join(rootDir, "views", "add-product.html"));
+});
+
+
+```
