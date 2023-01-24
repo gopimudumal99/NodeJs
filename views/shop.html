@@ -6,14 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop</title>
   </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    .main-header {
+      width: 100%;
+      height: 3.5rem;
+      background: #eaff48;
+      padding: 0 1.5rem;
+    }
+    .main-header__nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .main-header__item-list {
+      list-style: none;
+      display: flex;
+    }
+
+    .main-header__item {
+      margin: 0 1rem;
+    }
+
+    .main-header__item-list a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .main-header__item-list a:hover {
+      color: #2aadff;
+    }
+    .main-header__item-list a:active {
+      color: #45ff4e;
+    }
+    .main-header__item-list a.active {
+        color: red;
+    }
+  </style>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Shop</a>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+          <li class="main-header__item">
+            <a href="/" class="active">Shop</a>
           </li>
-          <li><a href="/admin/add-product"> add product</a></li>
+          <li class="main-header__item">
+            <a href="/admin/add-product"> Add Product</a>
+          </li>
         </ul>
       </nav>
     </header>
