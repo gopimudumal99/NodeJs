@@ -92,12 +92,19 @@ server.listen(3000);
   node app.js => start script => parse code, register variables & Functions => Event Loop => to stop forcefully - process.exit
 
 ## code
-
+- how web works? client => Request => Server => Response => Client
+- program Life Cycle & Event loop
+- Asynchronous code
+- request and responses
+- node js and core modules
+- node module system
 - understanding request
 - sending response
 - Routing Requests
 - GET =>
 - POST =>
+
+! add image here
 
 ```node
 // sending response
@@ -202,4 +209,3 @@ please go throw this article
 ! please add a image here
 ! add here event loop picture
 
-<your code>
