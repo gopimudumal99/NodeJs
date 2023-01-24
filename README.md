@@ -16,7 +16,7 @@
 `const fs = require('fs')` => file system core module for node
 `fs.writeFileSync('hello.tsx','Hello world')` => create file first args file name and second args is content of file
 
-**_./ => relative path && / => absolute path_**
+**./ => relative path && / => absolute path**
 
 - fs
 - https => launch SSL server
@@ -213,6 +213,9 @@ please go throw this article
 # Express.js
 
 ! add image here?
+**Express.js is Node.js framework - a package that adds a bunch of utility functions and tools and a clear set of rules on how the app should be built (middleware!) and it's highly extensibel and other packages can be plugged into it (middleware)**
+
+! add the all module learn image
 
 - Server side logic is complex
 - focus on your business logic, not on the nitty-gritty Details!
@@ -249,7 +252,7 @@ server.listen(3001);
 - express all about middleware
 - add image here ?
 - middleware are going to add after app and before server
-- **_app.use((req,res,next)=>{})_** => this method allows as to add new middleware function
+- **app.use((req,res,next)=>{})** => this method allows as to add new middleware function
 
 ```node
 // app.use(express.json()); //! i don't no it will be not working here
@@ -260,13 +263,13 @@ app.use((req, res, next) => {
 });
 ```
 
-- **_next_** is a function that allows the request to continue to the next middleware in line
+- **next** is a function that allows the request to continue to the next middleware in line
 
-```app.use(bodyParser.urlencoded({extended:false}));
-
+```node
+app.use(bodyParser.urlencoded({ extended: false }));
 ```
 
-this **_body-parser_** library helps to parse the incoming request with body
+this **body-parser** library helps to parse the incoming request with body
 
 #### routes
 
@@ -290,9 +293,9 @@ router.post("/product", (req, res, next) => {
 module.exports = router;
 ```
 
-**_router.use() _** => will not check exact method and path, it will handle all http methods
+**router.use()** => will not check exact method and path, it will handle all http methods
 
-**_router.get() _** => will check exact method and path
+**router.get()** => will check exact method and path
 
 #### Adding 404 page
 
@@ -304,7 +307,7 @@ app.use((req, res, next) => {
 });
 ```
 
-**_ show response html file _**
+**show response html file**
 
 ```
 // /admin/add-product =>get
@@ -325,5 +328,15 @@ router.get("/add-product", (req, res, next) => {
   res.sendFile(path.join(rootDir, "views", "add-product.html"));
 });
 
+```
 
+#### service static file
+
+```
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// this express give functionality
+app.use(express.static(path.join(__dirname, "public")));
 ```
