@@ -344,3 +344,7 @@ app.use(express.static(path.join(__dirname, "public")));
 - product id
 - display product
 - passing data with post request
+- adding cart model
+- using query params
+
+*** fs.writeFile & fs.writeFileSync***
