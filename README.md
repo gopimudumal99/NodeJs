@@ -341,3 +341,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 ```
 ## dynamic routes
+- product id
+- display product
+- passing data with post request
