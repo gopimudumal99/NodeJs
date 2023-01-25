@@ -340,3 +340,4 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // this express give functionality
 app.use(express.static(path.join(__dirname, "public")));
 ```
+## dynamic routes
