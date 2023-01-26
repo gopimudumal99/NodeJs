@@ -340,11 +340,105 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // this express give functionality
 app.use(express.static(path.join(__dirname, "public")));
 ```
+
 ## dynamic routes
+
 - product id
 - display product
 - passing data with post request
 - adding cart model
 - using query params
 
-*** fs.writeFile & fs.writeFileSync***
+**_ fs.writeFile & fs.writeFileSync_**
+
+## SQL or NO SQL
+
+### SQL
+
+- tables
+- tables head => fields
+- tables content => records
+- Orders
+  add image here?
+
+#### Core SQL Database characteristics
+
+- Data schema
+- Data relations
+- one to one , one to many & many to many => tables are interconnected
+
+#### SQL Queries
+
+```sql
+SELECT * FROM users WHERE age > 18
+```
+
+add image here?
+
+## NO SQL
+
+- tables are called **collections**
+- in collections **documents**
+- no strict schema **(schema less)**
+- duplicate data
+
+### NO SQL characteristics
+
+- No data schema
+- No data relations
+
+### Horizontal vs Vertical Scalling
+
+- Horizontal => add more services (merge data into one database)
+- vertical => improve Sever capacity/Hardware
+  add image here?
+
+### SQL v/s NO SQL
+
+add image here?
+
+###
+
+```js
+// yarn add mysql2
+
+// utils => database.js
+
+const mysql = require("mysql12");
+
+const pool = mysql.createPool({
+  host: "localhost",
+  user: "root",
+  database: "node-complete",
+  password: "12345678",
+});
+
+module.exports = pool.promise();
+```
+
+## Sequelize
+
+- An object-relational Mapping Library
+  add image here!
+
+### core concepts Sequelize
+
+- models
+- instance
+- Queries
+- associations
+
+add image here?
+
+```js
+const Sequelize = require("sequelize");
+
+const sequelize = new Sequelize("node-complete", "root", "node-complete", {
+  dialect: "mysql",
+  host: "localhost",
+});
+
+module.exports = sequelize;
+```
+### associations
+add image here?
